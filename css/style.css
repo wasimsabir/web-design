@@ -1,0 +1,173 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+
+/* to broing color picker, hover over on color, click on color to activate rgba then move the alpha handle*/
+.header{
+  height: 95vh;
+  background-image: linear-gradient(to right bottom,rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8) ),
+  url("../img/hero.jpg"); /* gradient go from top left (first color) to right bottom (second color) */
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+}
+
+.logo-box{
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+.logo {
+  height: 35px;   /*width will be automatically adjust by the browser*/
+}
+
+.text-box {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);  /* -50% of element width and -50% of element height*/
+  text-align: center;
+}
+
+.heading-primary{
+ color: #fff;
+ text-transform: uppercase;
+ backface-visibility: hidden;  /*back part of an element will be hidden if tranform property is applied*/
+}
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation-name: animationNameMoveInLeft;
+  animation-duration: 1s;
+  /*animation-delay: 3s; */  /* it will wait 3 sec to start animation */
+  /* animation-iteration-count: 3; */ /* repeat animation 3 times*/
+  animation-timing-function: ease-out;
+ 
+}
+
+.heading-primary-sub{
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+  animation: moveInRight 1s ease-out; /*animation-name, animation-duration animation-timing-function*/
+  margin-bottom: 60px;
+}
+
+/*Animation*/
+@keyframes animationNameMoveInLeft {
+  0% {
+    opacity: 0; /* at the beginning of animation opacity is 0*/
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  100% {
+    opacity: 1; /* at the end of animation opacity is 0*/
+    transform: translate(0);
+  }
+
+}  /* end key frames */
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+} /*end keyframes*/
+
+@keyframes moveInBottom{
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+} /*keyframes end*/
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative;
+}
+
+.btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,.2); green, blue, alpha);
+}
+
+.btn:active {   /*when button is clicked*/
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,.2); green, blue, alpha);
+}
+
+.btn-white{
+  background-color: #fff;
+  color: #777;
+}
+
+.btn::after{
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+.btn-white::after{
+  background-color: #fff;
+}
+
+.btn:hover::after{
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom .5s ease-out .75s; /* .75 delay */
+  animation-fill-mode: backwards;
+}
