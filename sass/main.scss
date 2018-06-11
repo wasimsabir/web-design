@@ -9,67 +9,8 @@
 
 @import "components/button";
 
+@import "layout/header";
+
 @import "pages/home";
 
-
-
 /* to bring color picker, hover over on color, click on color to activate rgba then move the alpha handle*/
-.header {
-  height: 95vh;
-  background-image: linear-gradient(
-      to right bottom,
-      rgba($color-primary-light, 0.8),
-      rgba($color-primary-dark, 0.8)
-    ),
-    url("../img/hero.jpg"); /* gradient go from top left (first color) to right bottom (second color) */
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  position: relative;
-
-  &__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem;
-  }
-  &__logo {
-    height: 3.5rem; /*width will be automatically adjust by the browser*/
-  }
-
-  &__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(
-      -50%,
-      -50%
-    ); /* -50% of element width and -50% of element height*/
-    text-align: center;
-  }
-}
-.heading-primary {
-  color: $color-white;
-  text-transform: uppercase;
-  backface-visibility: hidden; /* back part of an element will be hidden if tranform property is applied */
-  margin-bottom: 6rem;
-  &--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: animationNameMoveInLeft;
-    animation-duration: 1s;
-    /* animation-delay: 3s; */
-    /* it will wait 3 sec to start animation */
-    /* animation-iteration-count: 3; */ /* repeat animation 3 times */
-    animation-timing-function: ease-out;
-  }
-  &--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out; /* animation-name, animation-duration animation-timing-function */
-    margin-bottom: 60px;
-  }
-}
