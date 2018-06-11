@@ -1,0 +1,39 @@
+/* Animation */
+@keyframes animationNameMoveInLeft {
+  0% {
+    opacity: 0; /* at the beginning of animation opacity is 0 */
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1; /* at the end of animation opacity is 0 */
+    transform: translate(0);
+  }
+}
+/* end key frames */
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+/* end keyframes */
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
